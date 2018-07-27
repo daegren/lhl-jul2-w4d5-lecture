@@ -64,12 +64,7 @@ module.exports = db => {
       .then(user =>
         bcrypt
           .compare(password, user.password_digest)
-          .then(() => {
-            return user;
-          })
-          .catch(err => {
-            return Promise.reject("Invalid password");
-          })
+          .then(res => (res ? user : Promise.reject("Invalid password")))
       );
   };
 
