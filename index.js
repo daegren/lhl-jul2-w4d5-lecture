@@ -74,7 +74,7 @@ app.get("/", (req, res) => {
 
 // GET /register - Registration Page
 app.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", { currentUser: req.currentUser });
 });
 
 // POST /register - Registration Handler
@@ -105,7 +105,7 @@ app.post("/register", (req, res) => {
 
 // GET /login - Login Page
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { currentUser: req.currentUser });
 });
 
 // POST /login - Login Handler
