@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include _head %>
+  <body>
+    <h1>Hello <%= currentUser.username %>!</h1>
+
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+
+    <form action="/logout" method="POST">
+      <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+  </body>
+</html>
